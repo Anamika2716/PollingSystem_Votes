@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const productSchema = new Schema({
+const questionSchema = new Schema({
 
 
+    _id:mongoose.Schema.Types.ObjectId,
     id:{
         type:Number,
         required:true
     },
-    name:{
+    title:{
         type:String,
         required: true
     },
-    quantity:{
-        type:Number,
-        required:true
-    }
+   options:{
+        type:Array,
+   }
 
 });
-module.exports = mongoose.model('products', productSchema);
+module.exports = mongoose.model('questions', questionSchema);
