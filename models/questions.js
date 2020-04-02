@@ -13,6 +13,7 @@ const questionSchema = new Schema({
         type:String,
         required: true
     },
+    //array of options Id
    options:{
         type:Array,
    }

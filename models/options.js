@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const optionsSchema = new Schema({
 
 
+    //ref for question Id
     questionId:{
         type:Number,
         required:true

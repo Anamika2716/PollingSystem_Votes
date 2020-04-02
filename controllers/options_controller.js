@@ -7,10 +7,11 @@ async  function addvote(req, res) {
     try {
 
         let id = req.params.id;
-        let optionDoc = await Options.findOneAndUpdate({id: id}, {$inc: {vote: 1}});
+        let optionDoc = await Options.findOneAndUpdate({id: id}, {$inc: {vote: 1}}, {new:true});
         if (!optionDoc) {
             throw new Error("Invalid Option Id");
         }
+        await optionDoc.save();
         console.log("optionDoc", optionDoc);
         return res.status(200).send({
             "message": "Vote Added Successfully",
