@@ -33,8 +33,9 @@ async function postQuestions(req, res){
         return res.status(200).json({
             data:{
                 questions:{
-                  //  id:id,
-                    title:questions.title
+                     id:id,
+                    title:questions.title,
+                    options:[]
                 }
             },
 
